@@ -1,25 +1,28 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent } from './app.component';
-import { ConnectionComponent } from './connection/connection.component';
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { HomeComponent } from './home/home.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { MainUserComponent } from './main-user/main-user.component';
-import { ProfileComponent } from './profile/profile.component';
+import {CategorieProduitComponent} from "./categorie-produit/categorie-produit.component";
+import {ProduitComponent} from "./produit/produit.component";
+import {ReclamationComponent} from "./reclamation/reclamation.component";
+import {ReponseReclamation} from "./Model/ReponseReclamation";
+import {FormCategorieproduitComponent} from "./form-categorieproduit/form-categorieproduit.component";
+import {ReponseReclamationComponent} from "./reponse-reclamation/reponse-reclamation.component";
 
 const routes: Routes = [
-  {path: 'inscription', component: InscriptionComponent},
-  {path : 'connexion', component: ConnectionComponent},
-  {path : 'home', component: HomeComponent},
-  {path : 'profile', component: ProfileComponent},
-  {path : 'users', component: MainUserComponent},
-  {path : 'forgetPassword', component: ForgetPasswordComponent}
+  {path:'categorieProduit' , component:CategorieProduitComponent},
+  {path:'produit' , component:ProduitComponent},
+  {path:'produit/:categoryid' , component:ProduitComponent},
+  {path:'reclamation' , component:ReclamationComponent},
+  {path:'espaceReclamation/:Recid',component:ReponseReclamationComponent},
+  {path:'ajouterCategorie',component:FormCategorieproduitComponent},
+
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
