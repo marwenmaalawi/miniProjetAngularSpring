@@ -6,17 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { FooterComponent } from './footer/footer.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { ConnectionComponent } from './connection/connection.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { UserFormComponent } from './user-form/user-form.component';
-import { UpdatePswFormComponent } from './update-psw-form/update-psw-form.component';
-import { MainUserComponent } from './main-user/main-user.component';
-import { UserComponent } from './user/user.component';
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { CategorieProduitComponent } from './categorie-produit/categorie-produit.component';
+import { HttpClientModule} from "@angular/common/http";
+import { ProduitComponent } from './produit/produit.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
+import { ReponseReclamationComponent } from './reponse-reclamation/reponse-reclamation.component';
+
+import { FormCategorieproduitComponent } from './form-categorieproduit/form-categorieproduit.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormProduitComponent} from "./form-produit/form-produit.component";
+import { FormReclamationComponent } from './form-reclamation/form-reclamation.component';
+import { FormReponsereclamationComponent } from './form-reponsereclamation/form-reponsereclamation.component';
 
 @NgModule({
   declarations: [
@@ -24,21 +24,21 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     NavbarComponent,
     SidemenuComponent,
     FooterComponent,
-    InscriptionComponent,
-    ConnectionComponent,
-    HomeComponent,
-    ProfileComponent,
-    UserFormComponent,
-    UpdatePswFormComponent,
-    MainUserComponent,
-    UserComponent,
-    ForgetPasswordComponent,
+    CategorieProduitComponent,
+    ProduitComponent,
+    ReclamationComponent,
+    ReponseReclamationComponent,
+    FormCategorieproduitComponent,
+    FormProduitComponent,
+    FormReclamationComponent,
+    FormReponsereclamationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

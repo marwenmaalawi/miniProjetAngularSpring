@@ -8,21 +8,15 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.event.EventListener;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entities.Badge;
 import tn.esprit.spring.entities.CodePromo;
-import tn.esprit.spring.entities.Facture;
 import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repositories.CodePromoRepository;
-import tn.esprit.spring.repositories.FactureRepository;
 import tn.esprit.spring.repositories.UserRepository;
-import tn.esprit.spring.services.EmailSender;
-import tn.esprit.spring.services.UserService;
 
 @Slf4j
 @RunWith(SpringRunner.class)
@@ -30,31 +24,17 @@ import tn.esprit.spring.services.UserService;
 public class testClass {
 	@Autowired
 	UserRepository userRepository;
-	@Autowired
-	EmailSender emailSender;
+	
 	@Autowired
 	CodePromoRepository codepromorepo;
-	@Autowired
-	UserService userService;
-	@Autowired
-	FactureRepository fs;
 	
-	//@Ignore
+/*	@Ignore
 	@Test
 	public void addProduit() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = dateFormat.parse("12/06/2018");
-		String psw = userService.doHashing("1234");
-		User u = new User(9L,"testnom","testprenom",date,"med@mod",psw,"user.png",null,Badge.Moderateur,false,null,null,null,null);
+		User u = new User(0,"testnom","testprenom",date,"testemail","testpwd",Badge.Fidele,false,null,null,codepromorepo.findById(1L).get(),null);
 		userRepository.save(u);
-	}
-	@Ignore
-	@Test
-	public void addFacture() throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = dateFormat.parse("30/09/2019");
-		Facture f = new Facture(0,22,date,true,null,userService.retrieveUser(13L));
-		fs.save(f);
 	}
 	
 	@Ignore
@@ -65,7 +45,7 @@ public class testClass {
 		CodePromo c = new CodePromo(0,"123",20,date,null);
 		codepromorepo.save(c);
 	}
-	@Ignore
+	
 	@Test
 	public void deleteCodepromo() {
 		CodePromo codePromo = codepromorepo.findById(1L).get();
@@ -77,7 +57,5 @@ public class testClass {
 		codepromorepo.deleteById(1L);
 	
 	}
-	
-	
-
+*/
 }

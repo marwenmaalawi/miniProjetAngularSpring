@@ -5,41 +5,23 @@ import { User } from '../Model/user';
   providedIn: 'root'
 })
 export class SessionService {
+  user : User;
+  constructor() {
+    this.user=new User(1,"test","test","Fidele");
+   }
+   getUser() : User{
 
-    constructor() {
-
-  }
-  getUser(): User {
-    let user: User
-    let data: any;
-    data = localStorage.getItem('user');
-    user = JSON.parse(data)
-    return user
-  }
-
-  setUser(u: User) {
-    localStorage.setItem('user', JSON.stringify(u))
-  }
-
-  getSessionType(): string {
-    let user = this.getUser()
-    if (user != null) {
-      if (user.badge === 'Fidele' || user.badge == "Ordinaire" || user.badge === 'Premium') {
+     return this.user;
+   }
+   getSessionType():string{
+     if (this.user.badge != '')
+     {
+      if (this.user.badge === 'Fidele' || this.user.badge === 'Ordinaire' || this.user.badge === 'Premium'){
         return 'USER';
       }
-      else if (user.badge === 'Moderateur')
-        return 'MODERATEUR';
       else
-        return 'NL';
-    }
-    return 'NL';
-  }
-
-  clearSession(){
-    localStorage.clear();
-  }
-
-  
-
-
+      return 'MODERATEUR';
+     }
+     return 'NL';
+   }
 }

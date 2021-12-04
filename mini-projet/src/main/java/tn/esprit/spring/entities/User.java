@@ -40,13 +40,13 @@ public class User implements Serializable{
 	private String password;
 	private String urlpicture;
 	private String token;
-	
 	@Enumerated(EnumType.STRING)
 	Badge badge;
     
 	private boolean promoActive;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE) 
+	@JsonIgnore
 	List<Facture> factures = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
@@ -56,6 +56,7 @@ public class User implements Serializable{
 	CodePromo codepromo;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE,fetch=FetchType.EAGER) 
+	@JsonIgnore
 	List<Reclamation> reclamations = new ArrayList<>();
 
 	public User(long idClient) {
